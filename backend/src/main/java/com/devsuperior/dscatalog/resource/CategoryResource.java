@@ -15,7 +15,7 @@ import com.devsuperior.dscatalog.entities.Category;
 public class CategoryResource {
 	
 	@GetMapping
-	public ResponseEntity<List<Category>> findeAll(){
+	public ResponseEntity<List<Category>> findAll(){
 		List<Category> list = new ArrayList<>();
 		list.add(new Category(1L, "Books"));
 		list.add(new Category(2L, "Electonics"));
