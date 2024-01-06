@@ -16,6 +16,7 @@ const Home = () => {
               mercado.
             </p>
           </div>
+
           <div>
             <Link to="/products">
               <ButtonIcon />
