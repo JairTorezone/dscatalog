@@ -1,13 +1,12 @@
 .home-container {
   padding: 10px;
   font-size: 20px;
-  border: 1px solid red;
+
   text-align: center;
 }
 .home-card {
   display: flex;
   flex-direction: column-reverse;
-  border: 1px solid orange;
 
   border-radius: 20px;
   background: #fff;
@@ -19,7 +18,6 @@
   flex-direction: column;
   align-items: center;
 
-  border: 1px solid green;
   padding: 10px 10px 60px;
 }
 .home-content-container h1 {
@@ -39,10 +37,105 @@
 
 .home-image-container {
   padding: 50px 15px;
-  border: 1px solid blue;
 }
 
 .home-image-container svg {
   width: 100%;
   height: auto;
+}
+
+@media (min-width: 576px) {
+  .home-container {
+    padding: 15px;
+    font-size: 40px;
+  }
+  .home-content-container h1 {
+    width: 506px;
+    margin-bottom: 20px;
+  }
+
+  .home-content-container p {
+    width: 506px;
+    margin-bottom: 20px;
+  }
+
+  .home-content-container button {
+    width: 506px;
+  }
+
+  .home-image-container svg {
+    width: 506px;
+  }
+}
+
+@media (min-width: 768px) {
+  .home-content-container {
+    padding: 20px 20px 100px 20px;
+  }
+  .home-image-container {
+    padding: 100px 20px;
+  }
+}
+
+@media (min-width: 992px) {
+  .home-container {
+    font-size: 55px;
+    padding: 40px;
+  }
+  .home-image-container {
+    padding: 125px 20px;
+  }
+
+  .home-content-container {
+    padding: 20px 20px 150px 20px;
+  }
+
+  .home-content-container h1 {
+    width: 700px;
+    margin-bottom: 26px;
+  }
+
+  .home-content-container p {
+    width: 700px;
+    margin-bottom: 47px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .home-card {
+    flex-direction: row;
+    justify-content: space-around;
+    padding: calc(((85vh - 480px) / 2) -20px) 0;
+  }
+  .home-content-container {
+    height: 480px;
+    width: 700px;
+
+    flex-flow: wrap;
+    align-content: space-between;
+    align-items: flex-start;
+
+    text-align: left;
+    padding: 20px;
+  }
+
+  .home-image-container svg {
+    width: 100%;
+  }
+  .home-image-container {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+  }
+}
+
+@media (min-width: 1366px) {
+  .home-image-container svg {
+    width: 468px;
+  }
+}
+@media (min-width: 1400px) {
+  .home-image-container svg {
+    width: 468px;
+  }
 }
