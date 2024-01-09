@@ -1,4 +1,4 @@
-package com.devsuperior.dscatalog.resource.exceptions;
+package com.devsuperior.dscatalog.resources.exceptions;
 
 import java.io.Serializable;
 import java.time.Instant;
@@ -11,7 +11,7 @@ public class StandardError implements Serializable {
 	private String error;
 	private String message;
 	private String path;
-
+	
 	public StandardError() {
 	}
 
@@ -54,5 +54,4 @@ public class StandardError implements Serializable {
 	public void setPath(String path) {
 		this.path = path;
 	}
-
 }
