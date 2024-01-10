@@ -2,15 +2,19 @@ import "./styles.css";
 import { ReactComponent as ArrowIcon } from "assets/images/arrow.svg";
 
 import ProductPrice from "components/ProductPrice";
+import { Link } from "react-router-dom";
 
 function ProductDetails() {
   return (
     <div className="product-details-container">
       <div className="base-card  product-details-card">
-        <div className="goback-container">
-          <ArrowIcon />
-          <h2>Voltar</h2>
-        </div>
+        <Link to="/products">
+          <div className="goback-container">
+            <ArrowIcon />
+            <h2>Voltar</h2>
+          </div>
+        </Link>
+
         <div className="row">
           <div className="col-xl-6">
             <div className="img-container">
@@ -19,11 +23,13 @@ function ProductDetails() {
                 alt="nome produto"
               />
             </div>
+
             <div className="name-price-container">
               <h1>Computador - Intel Core i7</h1>
               <ProductPrice price={2345.67} />
             </div>
           </div>
+
           <div className="col-xl-6">
             <div className="description-container">
               <h2>Descrição do produto</h2>
