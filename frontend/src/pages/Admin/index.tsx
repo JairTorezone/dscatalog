@@ -1,10 +1,13 @@
 import "./styles.css";
+import Navbar from "./Navbar";
 
 function Admin() {
   return (
-    <div>
-      <h1>Pagina Admin</h1>
-      <span>DSCatalog</span>
+    <div className="admin-container">
+      <Navbar />
+      <div className="admin-content">
+        <h1>Conteúdo</h1>
+      </div>
     </div>
   );
 }
