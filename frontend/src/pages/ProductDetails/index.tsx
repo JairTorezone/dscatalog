@@ -1,10 +1,29 @@
 import "./styles.css";
-import { ReactComponent as ArrowIcon } from "assets/images/arrow.svg";
 
+import { ReactComponent as ArrowIcon } from "assets/images/arrow.svg";
+import axios from "axios";
 import ProductPrice from "components/ProductPrice";
-import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Link, useParams } from "react-router-dom";
+
+import { Product } from "types/product";
+import { BASE_URL } from "Util/requests";
+
+type urlParams = {
+  productId: string;
+};
 
 function ProductDetails() {
+  const { productId } = useParams<urlParams>();
+
+  const [product, setProduct] = useState<Product>();
+
+  useEffect(() => {
+    axios.get(`${BASE_URL}/products/${productId}`).then((response) => {
+      setProduct(response.data);
+    });
+  }, [productId]);
+
   return (
     <div className="product-details-container">
       <div className="base-card  product-details-card">
@@ -18,37 +37,19 @@ function ProductDetails() {
         <div className="row">
           <div className="col-xl-6">
             <div className="img-container">
-              <img
-                src="https://raw.githubusercontent.com/devsuperior/dscatalog-resources/master/backend/img/2-big.jpg"
-                alt="nome produto"
-              />
+              <img src={product?.imgUrl} alt={product?.name} />
             </div>
 
             <div className="name-price-container">
-              <h1>Computador - Intel Core i7</h1>
-              <ProductPrice price={2345.67} />
+              <h1>{product?.name}</h1>
+              {product && <ProductPrice price={product?.price} />}
             </div>
           </div>
 
           <div className="col-xl-6">
             <div className="description-container">
               <h2>Descrição do produto</h2>
-              <p>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                Mollitia recusandae quis aut qui perferendis dicta consequuntur
-                alias a! Laborum sit cum quasi expedita, aliquam exercitationem
-                asperiores consectetur dolorum inventore adipisci. Numquam
-                magni, labore maiores veritatis quam fuga quo cupiditate quis
-                porro! Dolore magni exercitationem nostrum eveniet itaque,
-                placeat eius voluptatum voluptates laborum neque atque sunt
-                debitis ab expedita ipsum at. Debitis quidem, quo est nisi
-                ipsum, tenetur in odio natus dolor tempora eveniet numquam.
-                Modi, quos nulla provident, perferendis quisquam tenetur itaque
-                facilis quaerat vitae libero placeat laborum optio a! Quia,
-                repudiandae perferendis ipsa magnam quisquam facilis sed placeat
-                eligendi autem repellat deserunt dignissimos sequi eius
-                obcaecati fugit voluptatibus amet non nemo quas. Dolores
-              </p>
+              <p>{product?.description}</p>
             </div>
           </div>
         </div>
