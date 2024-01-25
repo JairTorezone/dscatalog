@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 
 import { Product } from "types/product";
-import { BASE_URL } from "Util/requests";
+import { BASE_URL } from "util/requests";
 import ProductInfoLoader from "./ProductInfoLoader";
 import ProductDetailsLoader from "./ProductDetailsLoader";
 
