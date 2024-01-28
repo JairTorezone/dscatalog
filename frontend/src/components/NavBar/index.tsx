@@ -83,10 +83,10 @@ function NavBar() {
           </ul>
         </div>
 
-        <div>
+        <div className="nav-login-logout">
           {authData.authenticated ? (
             <>
-              <span>{authData.tokenDatada?.user_name}</span>
+              <span className="nav-username">{authData.tokenDatada?.user_name}</span>
               <a href="#" onClick={handleLogoutClick}>
                 LOGOUT
               </a>
