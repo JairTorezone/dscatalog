@@ -43,9 +43,16 @@
 @media (min-width: 992px) {
   .nav-login-logout {
     margin-right: 40px;
+
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 3px;
   }
   .nav-username {
     display: unset;
     margin-right: 20px;
+
+    color: hwb(0 100% 0% / 0.657);
+    font-size: 14px;
   }
 }
